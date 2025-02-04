@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiendas y Comercios - VibeAcuña</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles/category.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="../index.html" class="logo">VibeAcuña</a>
+            <ul class="nav-menu">
+                <li><a href="antros.html">Antros y Bares</a></li>
+                <li><a href="restaurantes.html">Restaurantes</a></li>
+                <li><a href="cafeterias.html">Cafeterías</a></li>
+                <li><a href="tiendas.html" class="active">Tiendas y Comercios</a></li>
+                <li><a href="lugares.html">Lugares para Visitar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="category-main">
+        <section class="category-header">
+            <h1>Tiendas y Comercios</h1>
+            <p>Explora las mejores opciones de compras en Ciudad Acuña</p>
+        </section>
+
+        <section class="search-filter-section">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Buscar tiendas...">
+                <button type="button" id="searchButton">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <div class="filters-container">
+                <div class="filter-group">
+                    <label>Categoría:</label>
+                    <select id="tipoFilter">
+                        <option value="">Todas</option>
+                        <option value="ropa">Ropa y Accesorios</option>
+                        <option value="electronica">Electrónica</option>
+                        <option value="artesanias">Artesanías</option>
+                        <option value="deportes">Deportes</option>
+                        <option value="hogar">Hogar y Decoración</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Rango de Precios:</label>
+                    <select id="precioFilter">
+                        <option value="">Todos</option>
+                        <option value="economico">Económico</option>
+                        <option value="moderado">Moderado</option>
+                        <option value="alto">Alto</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Calificación:</label>
+                    <select id="calificacionFilter">
+                        <option value="">Todas</option>
+                        <option value="4">4+ estrellas</option>
+                        <option value="3">3+ estrellas</option>
+                        <option value="2">2+ estrellas</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <section class="places-grid" id="placesContainer">
+            <!-- Las tiendas se cargarán dinámicamente con JavaScript -->
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 VibeAcuña - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="../js/tiendas-data.js"></script>
+    <script src="../js/filters.js"></script>
+</body>
+</html> 

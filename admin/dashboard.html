@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Control - VibeAcuña</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="admin-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="admin-dashboard">
+        <aside class="sidebar">
+            <h2><i class="fas fa-city"></i> VibeAcuña</h2>
+            <nav class="admin-nav">
+                <ul>
+                    <li>
+                        <a href="#" class="active" onclick="showSection('comercios')">
+                            <i class="fas fa-store"></i>
+                            <span>Comercios</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="showSection('categorias')">
+                            <i class="fas fa-tags"></i>
+                            <span>Categorías</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="logout()">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Cerrar Sesión</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <section id="comercios" class="admin-section">
+                <div class="admin-header">
+                    <h1 class="admin-title">
+                        <i class="fas fa-store"></i>
+                        Gestión de Comercios
+                    </h1>
+                    <button onclick="showAddCommerceForm()" class="login-button">
+                        <i class="fas fa-plus"></i>
+                        Nuevo Comercio
+                    </button>
+                </div>
+
+                <div id="commerceForm" class="commerce-form" style="display: none;">
+                    <form id="addCommerceForm" class="form-grid">
+                        <div class="form-group">
+                            <label for="nombre">
+                                <i class="fas fa-signature"></i>
+                                Nombre del Comercio
+                            </label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="categoria">
+                                <i class="fas fa-tag"></i>
+                                Categoría
+                            </label>
+                            <select id="categoria" name="categoria" required>
+                                <option value="">Seleccionar categoría</option>
+                                <option value="antros">Antros y Bares</option>
+                                <option value="restaurantes">Restaurantes</option>
+                                <option value="cafeterias">Cafeterías</option>
+                                <option value="tiendas">Tiendas y Comercios</option>
+                                <option value="lugares">Lugares para Visitar</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tipo">
+                                <i class="fas fa-info-circle"></i>
+                                Tipo
+                            </label>
+                            <input type="text" id="tipo" name="tipo" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="precio">
+                                <i class="fas fa-dollar-sign"></i>
+                                Rango de Precio
+                            </label>
+                            <select id="precio" name="precio" required>
+                                <option value="economico">Económico</option>
+                                <option value="moderado">Moderado</option>
+                                <option value="alto">Alto</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="horario">
+                                <i class="fas fa-clock"></i>
+                                Horario
+                            </label>
+                            <input type="text" id="horario" name="horario" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ubicacion">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Ubicación
+                            </label>
+                            <input type="text" id="ubicacion" name="ubicacion" required>
+                        </div>
+
+                        <div class="form-group-full">
+                            <label for="descripcion">
+                                <i class="fas fa-align-left"></i>
+                                Descripción
+                            </label>
+                            <textarea id="descripcion" name="descripcion" rows="3" required></textarea>
+                        </div>
+
+                        <div class="form-group-full">
+                            <label for="imagen">
+                                <i class="fas fa-image"></i>
+                                Imagen
+                            </label>
+                            <input type="file" id="imagen" name="imagen" accept="image/*" required>
+                            <img id="imagePreview" class="image-preview" src="#" alt="" style="display: none;">
+                        </div>
+
+                        <div class="form-group-full">
+                            <div class="form-buttons">
+                                <button type="submit" class="login-button">
+                                    <i class="fas fa-save"></i>
+                                    Guardar Comercio
+                                </button>
+                                <button type="button" onclick="hideAddCommerceForm()" class="delete-button">
+                                    <i class="fas fa-times"></i>
+                                    Cancelar
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <table class="commerce-table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Categoría</th>
+                            <th>Tipo</th>
+                            <th>Ubicación</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="commerceTableBody">
+                        <!-- Los comercios se cargarán dinámicamente -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html> 
