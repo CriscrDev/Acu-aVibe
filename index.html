@@ -4,21 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VibeAcuña - Descubre los mejores lugares</title>
+    <link rel="icon" type="image/png" href="images/VA.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header class="header">
         <nav class="nav-container">
-            <div class="logo">VibeAcuña</div>
+            <div class="logo">
+                <img src="images/VA.png" alt="VibeAcuña Logo" class="logo-img">
+                <span class="logo-text">VibeAcuña</span>
+            </div>
             <ul class="nav-menu">
                 <li><a href="pages/antros.html">Antros y Bares</a></li>
                 <li><a href="pages/restaurantes.html">Restaurantes</a></li>
                 <li><a href="pages/cafeterias.html">Cafeterías</a></li>
                 <li><a href="pages/tiendas.html">Tiendas y Comercios</a></li>
                 <li><a href="pages/lugares.html">Lugares para Visitar</a></li>
+                <li><a href="pages/locales.html">Locales</a></li>
             </ul>
         </nav>
     </header>
@@ -31,34 +37,131 @@
 
         <section id="categorias" class="categories-grid">
             <a href="pages/antros.html" class="category-card" id="antros">
+                <i class="fas fa-cocktail category-icon"></i>
                 <h2>Antros y Bares</h2>
                 <p>Descubre la vida nocturna</p>
             </a>
 
             <a href="pages/restaurantes.html" class="category-card" id="restaurantes">
+                <i class="fas fa-utensils category-icon"></i>
                 <h2>Restaurantes</h2>
                 <p>Las mejores experiencias culinarias</p>
             </a>
 
             <a href="pages/cafeterias.html" class="category-card" id="cafeterias">
+                <i class="fas fa-coffee category-icon"></i>
                 <h2>Cafeterías</h2>
                 <p>Lugares perfectos para relajarte</p>
             </a>
 
             <a href="pages/tiendas.html" class="category-card" id="tiendas">
+                <i class="fas fa-shopping-bag category-icon"></i>
                 <h2>Tiendas y Comercios</h2>
                 <p>Las mejores opciones para comprar</p>
             </a>
 
             <a href="pages/lugares.html" class="category-card" id="lugares">
+                <i class="fas fa-map-marked-alt category-icon"></i>
                 <h2>Lugares para Visitar</h2>
                 <p>Atractivos turísticos imperdibles</p>
             </a>
+
+            <a href="pages/locales.html" class="category-card" id="locales">
+                <i class="fas fa-store category-icon"></i>
+                <h2>Locales</h2>
+                <p>Descubre los mejores locales comerciales</p>
+            </a>
         </section>
+
+        <!-- Sección del mapa temporalmente desactivada
+        <section id="mapa-interactivo" class="map-section">
+            <div class="section-header">
+                <h2><i class="fas fa-map-marked-alt"></i> Explora Ciudad Acuña</h2>
+                <p>Encuentra todos los lugares en el mapa</p>
+            </div>
+            
+            <div class="map-container">
+                <div class="map-filters">
+                    <button class="map-filter active" data-category="todos">
+                        <i class="fas fa-globe"></i> Todos
+                    </button>
+                    <button class="map-filter" data-category="antros">
+                        <i class="fas fa-cocktail"></i> Antros
+                    </button>
+                    <button class="map-filter" data-category="restaurantes">
+                        <i class="fas fa-utensils"></i> Restaurantes
+                    </button>
+                    <button class="map-filter" data-category="cafeterias">
+                        <i class="fas fa-coffee"></i> Cafeterías
+                    </button>
+                    <button class="map-filter" data-category="tiendas">
+                        <i class="fas fa-shopping-bag"></i> Tiendas
+                    </button>
+                    <button class="map-filter" data-category="lugares">
+                        <i class="fas fa-map-marker-alt"></i> Lugares
+                    </button>
+                    <button class="map-filter" data-category="locales">
+                        <i class="fas fa-store"></i> Locales
+                    </button>
+                </div>
+                <div id="map"></div>
+            </div>
+        </section>
+        -->
+
     </main>
 
     <footer class="footer">
-        <p>&copy; 2024 VibeAcuña - Todos los derechos reservados</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre VibeAcuña</h3>
+                <p>Tu guía definitiva para descubrir los mejores lugares en Ciudad Acuña. Encuentra restaurantes, bares, cafeterías y más.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="pages/antros.html"><i class="fas fa-cocktail"></i> Antros y Bares</a></li>
+                    <li><a href="pages/restaurantes.html"><i class="fas fa-utensils"></i> Restaurantes</a></li>
+                    <li><a href="pages/cafeterias.html"><i class="fas fa-coffee"></i> Cafeterías</a></li>
+                    <li><a href="pages/tiendas.html"><i class="fas fa-shopping-bag"></i> Tiendas</a></li>
+                    <li><a href="pages/lugares.html"><i class="fas fa-map-marker-alt"></i> Lugares Turísticos</a></li>
+                    <li><a href="pages/locales.html"><i class="fas fa-store"></i> Locales</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <ul class="footer-links">
+                    <li><a href="mailto:info@vibeacuna.com"><i class="fas fa-envelope"></i> info@vibeacuna.com</a></li>
+                    <li><a href="tel:+528771234567"><i class="fas fa-phone"></i> (877) 123-4567</a></li>
+                    <li><a href="#"><i class="fas fa-map-pin"></i> Ciudad Acuña, Coahuila</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <p>Suscríbete para recibir las últimas actualizaciones y eventos.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Tu correo electrónico">
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 VibeAcuña - Todos los derechos reservados</p>
+        </div>
     </footer>
+    <!-- Scripts del mapa temporalmente desactivados
+    <script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&callback=initMap" async defer></script>
+    <script src="js/map.js"></script>
+    -->
 </body>
 </html> 

@@ -15,13 +15,13 @@
 
 .category-header h1 {
     font-size: 2.5rem;
-    color: var(--primary-color);
+    color: #000000;
     margin-bottom: 1rem;
 }
 
 .category-header p {
     font-size: 1.2rem;
-    color: #666;
+    color: #000000;
     max-width: 600px;
     margin: 0 auto;
 }
@@ -84,7 +84,7 @@
 
 .filter-group label {
     font-weight: 500;
-    color: var(--primary-color);
+    color: #000000;
 }
 
 .filter-group select {
@@ -92,7 +92,7 @@
     border: 2px solid #e0e0e0;
     border-radius: 5px;
     font-size: 0.9rem;
-    color: #333;
+    color: #000000;
     background-color: white;
     cursor: pointer;
     transition: border-color 0.3s ease;
@@ -135,13 +135,13 @@
 }
 
 .place-info h3 {
-    color: var(--primary-color);
+    color: #000000;
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
 }
 
 .place-info p {
-    color: #666;
+    color: #000000;
     margin-bottom: 0.5rem;
     font-size: 0.9rem;
 }
@@ -153,6 +153,7 @@
     margin-top: 1rem;
     padding-top: 1rem;
     border-top: 1px solid #e0e0e0;
+    color: #000000;
 }
 
 .place-rating {
@@ -162,6 +163,283 @@
 .place-price {
     color: #27ae60;
     font-weight: 500;
+}
+
+.place-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.details-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.details-button:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* Estilos del Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    background-color: white;
+    border-radius: 15px;
+    z-index: 1100;
+    opacity: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    overflow: auto;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1090;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.active,
+.modal-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+.modal-content {
+    position: relative;
+    width: 100%;
+    background-color: white;
+}
+
+.modal-header {
+    position: sticky;
+    top: 0;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1.5rem;
+    z-index: 2;
+}
+
+.modal-body {
+    padding: 2rem;
+    background-color: white;
+}
+
+/* Personalización del scrollbar */
+.modal::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 0 15px 15px 0;
+}
+
+.modal::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 4px;
+}
+
+.modal::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    padding-right: 2rem;
+}
+
+.modal-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.modal-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #000000;
+}
+
+.info-item i {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+}
+
+.modal-description {
+    grid-column: 1 / -1;
+    line-height: 1.6;
+    color: #000000;
+}
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.close-modal:hover {
+    transform: rotate(90deg);
+}
+
+/* Estilos para el botón de menú */
+.menu-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.menu-button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    margin-top: 1.5rem;
+}
+
+.menu-button:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Estilos para el contenedor del menú */
+.menu-container {
+    padding: 1rem;
+}
+
+.menu-container h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.menu-category {
+    margin-bottom: 2rem;
+}
+
+.menu-category h4 {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.menu-items {
+    display: grid;
+    gap: 1rem;
+}
+
+.menu-item {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-2px);
+}
+
+.menu-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.menu-item-name {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.menu-item-price {
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+.menu-item-description {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.menu-actions {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.back-button {
+    background-color: #6c757d;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
 }
 
 /* Responsive Design */
@@ -185,5 +463,21 @@
 
     .places-grid {
         grid-template-columns: 1fr;
+    }
+
+    .modal {
+        width: 95%;
+        max-height: 85vh;
+        margin: 0;
+    }
+
+    .menu-items {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-item-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
     }
 } 

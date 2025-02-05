@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cafeterías - VibeAcuña</title>
+    <title>Locales - VibeAcuña</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../styles/category.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,22 +21,23 @@
             <ul class="nav-menu">
                 <li><a href="antros.html">Antros y Bares</a></li>
                 <li><a href="restaurantes.html">Restaurantes</a></li>
-                <li><a href="cafeterias.html" class="active">Cafeterías</a></li>
+                <li><a href="cafeterias.html">Cafeterías</a></li>
                 <li><a href="tiendas.html">Tiendas y Comercios</a></li>
                 <li><a href="lugares.html">Lugares para Visitar</a></li>
+                <li><a href="locales.html" class="active">Locales</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="category-main">
         <section class="category-header">
-            <h1>Cafeterías</h1>
-            <p>Descubre los mejores lugares para disfrutar un buen café en Ciudad Acuña</p>
+            <h1>Locales</h1>
+            <p>Descubre los mejores locales comerciales de Ciudad Acuña</p>
         </section>
 
         <section class="search-filter-section">
             <div class="search-container">
-                <input type="text" id="searchInput" placeholder="Buscar cafeterías...">
+                <input type="text" id="searchInput" placeholder="Buscar locales...">
                 <button type="button" id="searchButton">
                     <i class="fas fa-search"></i>
                 </button>
@@ -47,10 +48,10 @@
                     <label>Tipo:</label>
                     <select id="tipoFilter">
                         <option value="">Todos</option>
-                        <option value="cafe_tradicional">Café Tradicional</option>
-                        <option value="cafe_especialidad">Café de Especialidad</option>
-                        <option value="pasteleria">Pastelería</option>
-                        <option value="brunch">Brunch</option>
+                        <option value="comida">Comida</option>
+                        <option value="ropa">Ropa</option>
+                        <option value="servicios">Servicios</option>
+                        <option value="entretenimiento">Entretenimiento</option>
                     </select>
                 </div>
 
@@ -77,7 +78,7 @@
         </section>
 
         <section class="places-grid" id="placesContainer">
-            <!-- Las cafeterías se cargarán dinámicamente con JavaScript -->
+            <!-- Los locales se cargarán dinámicamente con JavaScript -->
         </section>
     </main>
 
@@ -85,7 +86,7 @@
         <p>&copy; 2024 VibeAcuña - Todos los derechos reservados</p>
     </footer>
 
-    <script src="../js/cafeterias-data.js"></script>
+    <script src="../js/locales-data.js"></script>
     <script src="../js/filters.js"></script>
 </body>
 </html> 

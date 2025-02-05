@@ -9,7 +9,8 @@ const placesData = [
         calificacion: 4.5,
         precio: "moderado",
         horario: "18:00 - 02:00",
-        ubicacion: "Centro"
+        ubicacion: "Centro",
+        color: "#000000"
     },
     {
         id: 2,
@@ -20,7 +21,8 @@ const placesData = [
         calificacion: 4.8,
         precio: "alto",
         horario: "21:00 - 04:00",
-        ubicacion: "Zona Norte"
+        ubicacion: "Zona Norte",
+        color: "#000000"
     },
     {
         id: 3,
@@ -31,6 +33,7 @@ const placesData = [
         calificacion: 4.2,
         precio: "economico",
         horario: "14:00 - 00:00",
-        ubicacion: "Centro Histórico"
+        ubicacion: "Centro Histórico",
+        color: "#000000"
     }
 ]; 
