@@ -5,14 +5,10 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     const password = document.getElementById('password').value;
     const errorMessage = document.getElementById('error-message');
     
-    // En una implementación real, esto se haría con una API y base de datos
-    // Por ahora, usamos credenciales de ejemplo
-    if (username === 'admin' && password === 'admin123') {
-        // Guardar el estado de inicio de sesión
-        localStorage.setItem('adminLoggedIn', 'true');
-        // Redirigir al dashboard
-        window.location.href = 'dashboard.html';
+    if (login(username, password)) {
+        window.location.replace('dashboard.html');
     } else {
         errorMessage.textContent = 'Usuario o contraseña incorrectos';
+        errorMessage.style.display = 'block';
     }
 }); 

@@ -1,4 +1,4 @@
-// Datos de ejemplo para antros y bares
+// Datos de antros y bares
 const placesData = [
     {
         id: 1,
@@ -10,7 +10,27 @@ const placesData = [
         precio: "moderado",
         horario: "18:00 - 02:00",
         ubicacion: "Centro",
-        color: "#000000"
+        color: "#3498db",
+        menu: {
+            categorias: [
+                {
+                    nombre: "Cervezas",
+                    items: [
+                        { nombre: "Corona", precio: "$45", descripcion: "Cerveza clara" },
+                        { nombre: "Negra Modelo", precio: "$50", descripcion: "Cerveza oscura" },
+                        { nombre: "Victoria", precio: "$45", descripcion: "Cerveza tipo pilsner" }
+                    ]
+                },
+                {
+                    nombre: "Cocteles",
+                    items: [
+                        { nombre: "Margarita", precio: "$85", descripcion: "Tequila, limón y triple sec" },
+                        { nombre: "Mojito", precio: "$80", descripcion: "Ron, menta y limón" },
+                        { nombre: "Piña Colada", precio: "$90", descripcion: "Ron, piña y coco" }
+                    ]
+                }
+            ]
+        }
     },
     {
         id: 2,
@@ -22,7 +42,27 @@ const placesData = [
         precio: "alto",
         horario: "21:00 - 04:00",
         ubicacion: "Zona Norte",
-        color: "#000000"
+        color: "#e74c3c",
+        menu: {
+            categorias: [
+                {
+                    nombre: "Botellas",
+                    items: [
+                        { nombre: "Whisky Black Label", precio: "$1200", descripcion: "Botella 750ml" },
+                        { nombre: "Vodka Absolut", precio: "$800", descripcion: "Botella 750ml" },
+                        { nombre: "Tequila Don Julio", precio: "$1000", descripcion: "Botella 750ml" }
+                    ]
+                },
+                {
+                    nombre: "Bebidas Preparadas",
+                    items: [
+                        { nombre: "Long Island", precio: "$120", descripcion: "Mezcla de 5 licores" },
+                        { nombre: "Cosmopolitan", precio: "$100", descripcion: "Vodka y arándano" },
+                        { nombre: "Blue Hawaii", precio: "$110", descripcion: "Ron y curaçao azul" }
+                    ]
+                }
+            ]
+        }
     },
     {
         id: 3,
@@ -34,6 +74,26 @@ const placesData = [
         precio: "economico",
         horario: "14:00 - 00:00",
         ubicacion: "Centro Histórico",
-        color: "#000000"
+        color: "#f1c40f",
+        menu: {
+            categorias: [
+                {
+                    nombre: "Cervezas",
+                    items: [
+                        { nombre: "Cerveza de Barril", precio: "$35", descripcion: "Vaso de 500ml" },
+                        { nombre: "Michelada", precio: "$45", descripcion: "Preparada con limón y sal" },
+                        { nombre: "Cubetazo", precio: "$180", descripcion: "6 cervezas" }
+                    ]
+                },
+                {
+                    nombre: "Botanas",
+                    items: [
+                        { nombre: "Chicharrón", precio: "$50", descripcion: "Con salsa verde" },
+                        { nombre: "Tacos Dorados", precio: "$60", descripcion: "Orden de 4 piezas" },
+                        { nombre: "Cacahuates", precio: "$25", descripcion: "Preparados" }
+                    ]
+                }
+            ]
+        }
     }
 ]; 

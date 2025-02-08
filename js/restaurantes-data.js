@@ -1,4 +1,4 @@
-// Datos de ejemplo para restaurantes
+// Datos de restaurantes
 const placesData = [
     {
         id: 1,
@@ -16,21 +16,24 @@ const placesData = [
                     nombre: "Entradas",
                     items: [
                         { nombre: "Guacamole", precio: "$85", descripcion: "Aguacate fresco con tomate, cebolla y cilantro" },
-                        { nombre: "Queso Fundido", precio: "$95", descripcion: "Con chorizo o champiñones" }
+                        { nombre: "Queso Fundido", precio: "$95", descripcion: "Con chorizo o champiñones" },
+                        { nombre: "Sopa de Tortilla", precio: "$75", descripcion: "Tradicional sopa con tortilla crujiente" }
                     ]
                 },
                 {
                     nombre: "Platos Fuertes",
                     items: [
                         { nombre: "Enchiladas Verdes", precio: "$120", descripcion: "Rellenas de pollo con salsa verde" },
-                        { nombre: "Mole Poblano", precio: "$140", descripcion: "Pechuga de pollo bañada en mole" }
+                        { nombre: "Mole Poblano", precio: "$140", descripcion: "Pechuga de pollo bañada en mole" },
+                        { nombre: "Chiles en Nogada", precio: "$180", descripcion: "Chile poblano relleno con carne y frutas" }
                     ]
                 },
                 {
                     nombre: "Postres",
                     items: [
                         { nombre: "Flan Napolitano", precio: "$45", descripcion: "Casero con caramelo" },
-                        { nombre: "Churros", precio: "$40", descripcion: "Con azúcar y canela" }
+                        { nombre: "Churros", precio: "$40", descripcion: "Con azúcar y canela" },
+                        { nombre: "Pastel de Tres Leches", precio: "$55", descripcion: "Con frutas frescas" }
                     ]
                 }
             ]
@@ -52,14 +55,16 @@ const placesData = [
                     nombre: "Entradas",
                     items: [
                         { nombre: "Cóctel de Camarón", precio: "$130", descripcion: "Camarones frescos en salsa coctelera" },
-                        { nombre: "Tostadas de Atún", precio: "$90", descripcion: "Atún fresco marinado" }
+                        { nombre: "Tostadas de Atún", precio: "$90", descripcion: "Atún fresco marinado" },
+                        { nombre: "Sopa de Pescado", precio: "$85", descripcion: "Caldo casero con pescado del día" }
                     ]
                 },
                 {
                     nombre: "Especialidades",
                     items: [
                         { nombre: "Pescado a la Veracruzana", precio: "$180", descripcion: "Pescado del día en salsa de tomate y aceitunas" },
-                        { nombre: "Camarones al Mojo", precio: "$210", descripcion: "Camarones al mojo de ajo" }
+                        { nombre: "Camarones al Mojo", precio: "$210", descripcion: "Camarones al mojo de ajo" },
+                        { nombre: "Paella Marina", precio: "$250", descripcion: "Con mariscos variados" }
                     ]
                 }
             ]
@@ -74,7 +79,27 @@ const placesData = [
         calificacion: 4.8,
         precio: "alto",
         horario: "13:00 - 23:00",
-        ubicacion: "Centro Comercial"
+        ubicacion: "Centro Comercial",
+        menu: {
+            categorias: [
+                {
+                    nombre: "Cortes",
+                    items: [
+                        { nombre: "Ribeye", precio: "$320", descripcion: "350g de corte premium" },
+                        { nombre: "T-Bone", precio: "$380", descripcion: "500g de corte especial" },
+                        { nombre: "Arrachera", precio: "$250", descripcion: "300g marinada en especias" }
+                    ]
+                },
+                {
+                    nombre: "Guarniciones",
+                    items: [
+                        { nombre: "Papas a la Francesa", precio: "$60", descripcion: "Con especias argentinas" },
+                        { nombre: "Ensalada Mixta", precio: "$45", descripcion: "Vegetales frescos" },
+                        { nombre: "Chimichurri", precio: "$25", descripcion: "Salsa tradicional argentina" }
+                    ]
+                }
+            ]
+        }
     },
     {
         id: 4,
@@ -85,6 +110,26 @@ const placesData = [
         calificacion: 4.3,
         precio: "moderado",
         horario: "12:00 - 22:30",
-        ubicacion: "Zona Sur"
+        ubicacion: "Zona Sur",
+        menu: {
+            categorias: [
+                {
+                    nombre: "Pastas",
+                    items: [
+                        { nombre: "Spaghetti Carbonara", precio: "$140", descripcion: "Con huevo, panceta y queso pecorino" },
+                        { nombre: "Fettuccine Alfredo", precio: "$130", descripcion: "En salsa cremosa de queso" },
+                        { nombre: "Lasagna", precio: "$160", descripcion: "Tradicional con carne y bechamel" }
+                    ]
+                },
+                {
+                    nombre: "Pizzas",
+                    items: [
+                        { nombre: "Margherita", precio: "$150", descripcion: "Tomate, mozzarella y albahaca" },
+                        { nombre: "Quattro Formaggi", precio: "$180", descripcion: "Cuatro quesos selectos" },
+                        { nombre: "Prosciutto e Funghi", precio: "$170", descripcion: "Jamón y champiñones" }
+                    ]
+                }
+            ]
+        }
     }
 ]; 
