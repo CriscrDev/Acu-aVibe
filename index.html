@@ -75,6 +75,53 @@
             </a>
         </section>
 
+        <section class="events-section">
+            <button class="events-button" onclick="showEventsGallery()">
+                <i class="fas fa-calendar-alt"></i>
+                Próximos Eventos
+            </button>
+        </section>
+
+        <!-- Modal de Eventos -->
+        <div class="events-modal" id="eventsModal">
+            <div class="events-content">
+                <h2 class="events-title">Próximos Eventos en Ciudad Acuña</h2>
+                <button class="events-close" onclick="closeEventsGallery()">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="events-carousel">
+                    <div class="events-grid" id="eventsGrid">
+                        <div class="event-item active">
+                            <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Festival de Música">
+                        </div>
+                        <div class="event-item">
+                            <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Concierto en el Parque">
+                        </div>
+                        <div class="event-item">
+                            <img src="https://images.unsplash.com/photo-1504680177321-2e9a23b9ad6f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Feria Gastronómica">
+                        </div>
+                        <div class="event-item">
+                            <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Exposición de Arte">
+                        </div>
+                        <div class="event-item">
+                            <img src="https://images.unsplash.com/photo-1472653431158-6364773b2a56?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Festival Cultural">
+                        </div>
+                        <div class="event-item">
+                            <img src="https://images.unsplash.com/photo-1509824227185-9c5a01ceba0d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Evento Deportivo">
+                        </div>
+                    </div>
+                    <div class="carousel-controls">
+                        <button class="carousel-control prev" onclick="prevSlide()">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-control next" onclick="nextSlide()">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Sección del mapa temporalmente desactivada
         <section id="mapa-interactivo" class="map-section">
             <div class="section-header">
@@ -165,5 +212,87 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&callback=initMap" async defer></script>
     <script src="js/map.js"></script>
     -->
+    <script>
+        // Variables para el carrusel de eventos
+        let currentSlide = 0;
+        let slideInterval;
+        const SLIDE_DURATION = 5000; // Cambiar cada 5 segundos
+
+        function showEventsGallery() {
+            const modal = document.getElementById('eventsModal');
+            modal.classList.add('active');
+            startSlideshow();
+            
+            // Permitir cerrar la galería al hacer clic fuera
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeEventsGallery();
+                }
+            });
+
+            // Pausar el carrusel cuando el mouse está sobre la imagen
+            const carousel = document.querySelector('.events-carousel');
+            carousel.addEventListener('mouseenter', pauseSlideshow);
+            carousel.addEventListener('mouseleave', resumeSlideshow);
+        }
+
+        function closeEventsGallery() {
+            const modal = document.getElementById('eventsModal');
+            modal.classList.remove('active');
+            stopSlideshow();
+        }
+
+        function startSlideshow() {
+            showSlide(currentSlide);
+            slideInterval = setInterval(nextSlide, SLIDE_DURATION);
+        }
+
+        function stopSlideshow() {
+            clearInterval(slideInterval);
+        }
+
+        function pauseSlideshow() {
+            clearInterval(slideInterval);
+        }
+
+        function resumeSlideshow() {
+            slideInterval = setInterval(nextSlide, SLIDE_DURATION);
+        }
+
+        function showSlide(index) {
+            const items = document.querySelectorAll('.event-item');
+            const totalSlides = items.length;
+            
+            // Asegurar que el índice esté dentro del rango
+            currentSlide = (index + totalSlides) % totalSlides;
+
+            // Ocultar todas las diapositivas
+            items.forEach(item => {
+                item.classList.remove('active');
+                item.style.zIndex = 0;
+            });
+            
+            // Mostrar la diapositiva actual
+            items[currentSlide].classList.add('active');
+            items[currentSlide].style.zIndex = 1;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        // Precargar imágenes para transiciones más suaves
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('.event-item img');
+            images.forEach(img => {
+                const image = new Image();
+                image.src = img.src;
+            });
+        });
+    </script>
 </body>
 </html> 

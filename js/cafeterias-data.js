@@ -2,14 +2,20 @@
 const placesData = [
     {
         id: 1,
-        nombre: "Café del Arte",
+        nombre: "Kappel",
         tipo: "cafe_especialidad",
-        descripcion: "Café de especialidad y ambiente artístico",
-        imagen: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        descripcion: "La Casa del Café",
+        imagen: "../images/places/Kappel.JPG",
+        galeria: [
+            "../images/places/Kappel.JPG",
+            "https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1559925393-8be0ec4767c8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1485182708500-e8f1f318ba72?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        ],
         calificacion: 4.6,
         precio: "moderado",
         horario: "07:00 - 21:00",
-        ubicacion: "Centro Cultural",
+        ubicacion: "Heroes de Nacozari 605, Benito Juarez, Acuña, Mexico",
         menu: {
             categorias: [
                 {
@@ -45,6 +51,12 @@ const placesData = [
         tipo: "pasteleria",
         descripcion: "Pasteles artesanales y café gourmet",
         imagen: "https://images.unsplash.com/photo-1559620192-032c4bc4674e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        galeria: [
+            "https://images.unsplash.com/photo-1559620192-032c4bc4674e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1455373260793-3d6b701ea76b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1514509152927-e7d9df03f9a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1587314168485-3236d6710814?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        ],
         calificacion: 4.8,
         precio: "moderado",
         horario: "08:00 - 20:00",
@@ -76,6 +88,12 @@ const placesData = [
         tipo: "brunch",
         descripcion: "El mejor brunch de la ciudad con café de primera",
         imagen: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        galeria: [
+            "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1550507992-eb63ffee0847?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1525351484163-7529414344d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1512034400317-de97d7d6c3ed?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        ],
         calificacion: 4.5,
         precio: "alto",
         horario: "08:00 - 16:00",
@@ -107,6 +125,12 @@ const placesData = [
         tipo: "cafe_tradicional",
         descripcion: "Café de olla y pan dulce tradicional",
         imagen: "https://images.unsplash.com/photo-1442512595331-e89e73853f31?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        galeria: [
+            "https://images.unsplash.com/photo-1442512595331-e89e73853f31?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        ],
         calificacion: 4.3,
         precio: "economico",
         horario: "06:00 - 22:00",

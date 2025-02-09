@@ -17,10 +17,7 @@ document.body.insertAdjacentHTML('beforeend', `
                     <i class="fas fa-times"></i>
                 </button>
             </div>
-            <div class="modal-body">
-                <img class="modal-image" src="" alt="">
-                <div class="modal-info"></div>
-            </div>
+            <div class="modal-body"></div>
         </div>
     </div>
 `);
@@ -61,70 +58,74 @@ function showDetails(placeId) {
     if (!place) return;
 
     const modal = document.getElementById('placeModal');
-    const overlay = document.getElementById('modalOverlay');
     const header = modal.querySelector('.modal-header h2');
-    const image = modal.querySelector('.modal-image');
-    const info = modal.querySelector('.modal-info');
+    const body = modal.querySelector('.modal-body');
 
     header.textContent = place.nombre;
-    image.src = place.imagen;
-    image.alt = place.nombre;
 
-    let menuButton = '';
-    if (place.menu) {
-        menuButton = `
-            <div class="menu-button-container">
-                <button class="menu-button" onclick="showMenu(${place.id})">
-                    <i class="fas fa-book-open"></i>
-                    Ver Menú
-                </button>
+    let modalContent = `
+        <div class="modal-image-section">
+            <img class="modal-image" src="${place.imagen}" alt="${place.nombre}">
+        </div>
+        <div class="modal-info">
+            <div class="info-item">
+                <i class="fas fa-tag"></i>
+                <span>Tipo: ${place.tipo}</span>
             </div>
-        `;
-    }
-
-    info.innerHTML = `
-        <div class="info-item">
-            <i class="fas fa-tag"></i>
-            <span>Tipo: ${place.tipo}</span>
+            <div class="info-item">
+                <i class="fas fa-clock"></i>
+                <span>Horario: ${place.horario}</span>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Ubicación: ${place.ubicacion}</span>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-star"></i>
+                <span>Calificación: ${place.calificacion}</span>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-dollar-sign"></i>
+                <span>Precio: ${place.precio}</span>
+            </div>
+            <div class="modal-description">
+                <p>${place.descripcion}</p>
+            </div>
+            ${place.menu ? `
+                <div class="modal-menu-button">
+                    <button class="menu-button" onclick="showMenu(${place.id})">
+                        <i class="fas fa-utensils"></i>
+                        Ver Menú
+                    </button>
+                </div>
+            ` : ''}
         </div>
-        <div class="info-item">
-            <i class="fas fa-clock"></i>
-            <span>Horario: ${place.horario}</span>
-        </div>
-        <div class="info-item">
-            <i class="fas fa-map-marker-alt"></i>
-            <span>Ubicación: ${place.ubicacion}</span>
-        </div>
-        <div class="info-item">
-            <i class="fas fa-star"></i>
-            <span>Calificación: ${place.calificacion}</span>
-        </div>
-        <div class="info-item">
-            <i class="fas fa-dollar-sign"></i>
-            <span>Precio: ${place.precio}</span>
-        </div>
-        <div class="modal-description">
-            <p>${place.descripcion}</p>
-        </div>
-        ${menuButton}
     `;
 
+    body.innerHTML = modalContent;
     modal.classList.add('active');
-    overlay.classList.add('active');
+    document.getElementById('modalOverlay').classList.add('active');
 }
 
-// Función para mostrar el menú
-function showMenu(placeId) {
-    const place = placesData.find(p => p.id === placeId);
-    if (!place || !place.menu) return;
-
+// Función para cerrar el modal
+function closeModal() {
     const modal = document.getElementById('placeModal');
-    const info = modal.querySelector('.modal-info');
+    const overlay = document.getElementById('modalOverlay');
+    modal.classList.remove('active');
+    overlay.classList.remove('active');
+}
 
+// Cerrar modal al hacer clic en el overlay
+document.getElementById('modalOverlay').addEventListener('click', closeModal);
+
+// Función para mostrar el menú
+function getMenuHTML(menu) {
+    if (!menu.categorias || menu.categorias.length === 0) return '';
+    
     let menuHTML = '<div class="menu-container">';
     menuHTML += '<h3><i class="fas fa-utensils"></i> Menú</h3>';
-
-    place.menu.categorias.forEach(categoria => {
+    
+    menu.categorias.forEach(categoria => {
         menuHTML += `
             <div class="menu-category">
                 <h4>${categoria.nombre}</h4>
@@ -142,29 +143,26 @@ function showMenu(placeId) {
             </div>
         `;
     });
-
-    menuHTML += `
-        <div class="menu-actions">
-            <button class="back-button" onclick="showDetails(${place.id})">
-                <i class="fas fa-arrow-left"></i>
-                Volver a Detalles
-            </button>
-        </div>
-    </div>`;
-
-    info.innerHTML = menuHTML;
+    
+    menuHTML += '</div>';
+    return menuHTML;
 }
 
-// Función para cerrar el modal
-function closeModal() {
+// Función para mostrar el menú
+function showMenu(placeId) {
+    const place = placesData.find(p => p.id === placeId);
+    if (!place || !place.menu) return;
+
     const modal = document.getElementById('placeModal');
-    const overlay = document.getElementById('modalOverlay');
-    modal.classList.remove('active');
-    overlay.classList.remove('active');
-}
+    const header = modal.querySelector('.modal-header h2');
+    const body = modal.querySelector('.modal-body');
 
-// Cerrar modal al hacer clic en el overlay
-document.getElementById('modalOverlay').addEventListener('click', closeModal);
+    header.textContent = `Menú - ${place.nombre}`;
+
+    body.innerHTML = getMenuHTML(place.menu);
+    modal.classList.add('active');
+    document.getElementById('modalOverlay').classList.add('active');
+}
 
 // Función para filtrar lugares
 function filterPlaces() {
@@ -206,4 +204,30 @@ calificacionFilter.addEventListener('change', filterPlaces);
 // Cargar lugares inicialmente
 document.addEventListener('DOMContentLoaded', () => {
     displayPlaces(placesData);
-}); 
+});
+
+// Función para expandir una imagen
+function expandImage(imgSrc, imgAlt) {
+    const expandedDiv = document.createElement('div');
+    expandedDiv.className = 'expanded-image';
+    expandedDiv.innerHTML = `
+        <div class="expanded-image-content">
+            <img src="${imgSrc}" alt="${imgAlt}">
+            <button class="close-expanded" onclick="this.parentElement.parentElement.remove()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    `;
+    document.body.appendChild(expandedDiv);
+    
+    expandedDiv.addEventListener('click', function(e) {
+        if (e.target === this) {
+            this.remove();
+        }
+    });
+}
+
+// Hacer las funciones disponibles globalmente
+window.expandImage = expandImage;
+window.changeImage = changeImage;
+window.showMenu = showMenu; 

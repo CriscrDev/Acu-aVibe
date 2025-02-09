@@ -1,0 +1,121 @@
+.modal-image-section {
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #f5f5f5;
+}
+
+.modal-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.expanded-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 2rem;
+}
+
+.expanded-image-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.expanded-image-content img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.close-expanded {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.close-expanded:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .modal-image {
+        max-height: 300px;
+    }
+}
+
+.place-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.details-button,
+.menu-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.details-button {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.menu-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    background-color: var(--accent-color);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.details-button:hover,
+.menu-button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.details-button i,
+.menu-button i {
+    font-size: 16px;
+}
+
+.modal-menu-button {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.menu-button i {
+    font-size: 18px;
+} 

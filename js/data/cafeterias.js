@@ -1,0 +1,6 @@
+  nombre: "Kappel",
+  tipo: "cafe_especialidad",
+  descripcion: "Café de especialidad y ambiente artístico",
+  calificacion: 4.6,
+  precio: "moderado",
+  imagen: "/images/places/LogoK.JPG", 

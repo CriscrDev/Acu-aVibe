@@ -568,4 +568,196 @@ a {
     #map {
         height: 400px;
     }
+}
+
+.events-section {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+    margin: 2rem 0;
+}
+
+.events-button {
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: pulse 2s infinite;
+}
+
+.events-button i {
+    font-size: 1.4rem;
+}
+
+.events-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, var(--accent-color), var(--primary-color));
+}
+
+.events-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.events-modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.events-content {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.events-title {
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+.events-carousel {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    border-radius: 15px;
+    background: #000;
+}
+
+.events-grid {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.event-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease, visibility 0.8s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.event-item.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.event-item img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 15px;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.carousel-control {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5em;
+    transition: all 0.3s ease;
+    pointer-events: auto;
+    opacity: 0.7;
+}
+
+.carousel-control:hover {
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 1;
+}
+
+.events-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 2001;
+    padding: 15px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.events-close:hover {
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .events-carousel {
+        height: 60vh;
+    }
+
+    .events-title {
+        font-size: 1.5em;
+        padding: 0 40px;
+    }
+
+    .carousel-control {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2em;
+    }
 } 
