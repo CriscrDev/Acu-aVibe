@@ -6,6 +6,12 @@ const placesData = [
         tipo: "comida",
         descripcion: "Local comercial con diversos puestos de comida",
         imagen: "https://images.unsplash.com/photo-1552566626-52f8b828add9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        galeria: [
+            "https://images.unsplash.com/photo-1552566626-52f8b828add9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1552566626-52f8b828adda?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1552566626-52f8b828addb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1552566626-52f8b828addc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        ],
         calificacion: 4.6,
         precio: "moderado",
         horario: "10:00 - 22:00",
@@ -35,6 +41,12 @@ const placesData = [
         tipo: "ropa",
         descripcion: "Local de moda con las últimas tendencias",
         imagen: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        galeria: [
+            "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1441984904997-e0b6ba687e05?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1441984904998-e0b6ba687e06?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1441984904999-e0b6ba687e07?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        ],
         calificacion: 4.4,
         precio: "alto",
         horario: "11:00 - 21:00",
@@ -47,6 +59,12 @@ const placesData = [
         tipo: "comida",
         descripcion: "Variedad de opciones gastronómicas en un solo lugar",
         imagen: "https://images.unsplash.com/photo-1559329007-40df8a9345d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        galeria: [
+            "https://images.unsplash.com/photo-1559329007-40df8a9345d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1559329007-40df8a9345d9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1559329007-40df8a9345da?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1559329007-40df8a9345db?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        ],
         calificacion: 4.8,
         precio: "moderado",
         horario: "12:00 - 22:00",

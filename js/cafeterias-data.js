@@ -8,9 +8,9 @@ const placesData = [
         imagen: "../images/places/Kappel.JPG",
         galeria: [
             "../images/places/Kappel.JPG",
-            "https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1559925393-8be0ec4767c8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1485182708500-e8f1f318ba72?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+            "../images/places/Kappel2.jpg",
+            "../images/places/Kappel3.jpg",
+            "../images/places/Kappel4.jpg"
         ],
         calificacion: 4.6,
         precio: "moderado",

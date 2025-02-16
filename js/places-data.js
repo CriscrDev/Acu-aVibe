@@ -6,6 +6,12 @@ const placesData = [
         tipo: "bar",
         descripcion: "Bar con música en vivo y ambiente relajado",
         imagen: "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        galeria: [
+            "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1572116469697-31de0f17cc35?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1572116469698-31de0f17cc36?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1572116469699-31de0f17cc37?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        ],
         calificacion: 4.5,
         precio: "moderado",
         horario: "18:00 - 02:00",
@@ -38,6 +44,12 @@ const placesData = [
         tipo: "antro",
         descripcion: "El mejor ambiente nocturno con DJ en vivo",
         imagen: "https://images.unsplash.com/photo-1566737236500-c8ac43014a67?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        galeria: [
+            "https://images.unsplash.com/photo-1566737236500-c8ac43014a67?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1566737236501-c8ac43014a68?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1566737236502-c8ac43014a69?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1566737236503-c8ac43014a70?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        ],
         calificacion: 4.8,
         precio: "alto",
         horario: "21:00 - 04:00",
@@ -70,6 +82,12 @@ const placesData = [
         tipo: "cantina",
         descripcion: "Auténtica cantina mexicana con música tradicional",
         imagen: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        galeria: [
+            "https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1514933651104-005eec06c04c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1514933651105-005eec06c04d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1514933651106-005eec06c04e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        ],
         calificacion: 4.2,
         precio: "economico",
         horario: "14:00 - 00:00",
