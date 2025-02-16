@@ -5,12 +5,12 @@ const placesData = [
         nombre: "Kappel",
         tipo: "cafe_especialidad",
         descripcion: "La Casa del Café",
-        imagen: "/Acu-aVibe/images/places/Kappel.JPG",
+        imagen: "../images/places/Kappel.JPG",
         galeria: [
-            "/Acu-aVibe/images/places/Kappel.JPG",
-            "/Acu-aVibe/images/places/Kappel2.jpg",
-            "/Acu-aVibe/images/places/Kappel3.jpg",
-            "/Acu-aVibe/images/places/Kappel4.jpg"
+            "../images/places/Kappel.JPG",
+            "../images/places/Kappel2.jpg",
+            "../images/places/Kappel3.jpg",
+            "../images/places/Kappel4.jpg"
         ],
         calificacion: 4.6,
         precio: "moderado",

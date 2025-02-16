@@ -2,14 +2,14 @@ const placesData = [
     {
         id: 1,
         nombre: "Budai",
-        tipo: "Antro",
-        descripcion: "The Best Party in the City",
-        imagen: "/Acu-aVibe/images/places/Budai1.PNG",
+        tipo: "antro",
+        descripcion: "Bar y Antro",
+        imagen: "../images/places/Budai1.PNG",
         galeria: [
-            "/Acu-aVibe/images/places/Budai1.PNG",
-            "/Acu-aVibe/images/places/Budai2.png",
-            "/Acu-aVibe/images/places/Budai3.png",
-            "/Acu-aVibe/images/places/Budai4.png"
+            "../images/places/Budai1.PNG",
+            "../images/places/Budai2.png",
+            "../images/places/Budai3.png",
+            "../images/places/Budai4.png"
         ],
         calificacion: 5,
         precio: "moderado",
