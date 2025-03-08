@@ -4,12 +4,12 @@ const placesData = [
         nombre: "Budai",
         tipo: "antro",
         descripcion: "Bar y Antro",
-        imagen: "../images/places/Budai1.PNG",
+        imagen: "images/places/Budai1.PNG",
         galeria: [
-            "../images/places/Budai1.PNG",
-            "../images/places/Budai2.png",
-            "../images/places/Budai3.png",
-            "../images/places/Budai4.png"
+            "images/places/Budai1.PNG",
+            "images/places/Budai2.png",
+            "images/places/Budai3.png",
+            "images/places/Budai4.png"
         ],
         calificacion: 5,
         precio: "moderado",
