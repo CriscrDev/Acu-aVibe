@@ -4,33 +4,32 @@ const placesData = [
         nombre: "Budai",
         tipo: "antro",
         descripcion: "Bar y Antro",
-        imagen: "images/places/Budai1.PNG",
+        imagen: "../images/places/Budai1.PNG",
         galeria: [
-            "images/places/Budai1.PNG",
-            "images/places/Budai2.png",
-            "images/places/Budai3.png",
-            "images/places/Budai4.png"
+            "../images/places/Budai1.PNG",
+            "../images/places/Budai2.png",
+            "../images/places/Budai3.png",
+            "../images/places/Budai4.png"
         ],
-        calificacion: 5,
-        precio: "moderado",
-        horario: "22:00 - 02:00",
-        ubicacion: "Miguel Hidalgo 160, Zona Centro, 26200 Cd Acuña, Coah.",
+        horario: "Jueves a Sábado: 9:00 PM - 3:00 AM",
+        ubicacion: "Calle Principal #123, Centro",
+        calificacion: 4.8,
+        precio: "alto",
         menu: {
             categorias: [
                 {
                     nombre: "Botellas",
                     items: [
-                        { nombre: "Whisky Black Label", precio: "$1200", descripcion: "Botella 750ml" },
-                        { nombre: "Vodka Absolut", precio: "$800", descripcion: "Botella 750ml" },
-                        { nombre: "Tequila Don Julio", precio: "$1000", descripcion: "Botella 750ml" }
-                    ]
-                },
-                {
-                    nombre: "Bebidas Preparadas",
-                    items: [
-                        { nombre: "Long Island", precio: "$120", descripcion: "Mezcla de 5 licores" },
-                        { nombre: "Cosmopolitan", precio: "$100", descripcion: "Vodka y arándano" },
-                        { nombre: "Blue Hawaii", precio: "$110", descripcion: "Ron y curaçao azul" }
+                        {
+                            nombre: "Buchanan's",
+                            precio: "$1,800",
+                            descripcion: "Whisky escocés"
+                        },
+                        {
+                            nombre: "Don Julio",
+                            precio: "$1,600",
+                            descripcion: "Tequila premium"
+                        }
                     ]
                 }
             ]

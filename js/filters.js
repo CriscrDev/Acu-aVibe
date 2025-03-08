@@ -29,11 +29,37 @@ document.body.insertAdjacentHTML('beforeend', `
 let currentGalleryImages = [];
 let currentImageIndex = 0;
 
+// Función para manejar rutas de imágenes
+function getImagePath(path) {
+    // Si la ruta es una URL externa, la devolvemos tal cual
+    if (path.startsWith('http')) {
+        return path;
+    }
+    
+    // Si estamos en GitHub Pages
+    if (window.location.hostname === 'criscrdev.github.io') {
+        // Si la ruta ya tiene el prefijo de GitHub Pages, la devolvemos tal cual
+        if (path.startsWith('/Acu-aVibe/')) {
+            return path;
+        }
+        // Si no, agregamos el prefijo
+        return '/Acu-aVibe' + (path.startsWith('/') ? '' : '/') + path.replace(/^\.\.\//, '');
+    }
+    
+    // En desarrollo local, convertimos las rutas absolutas de GitHub Pages a relativas
+    if (path.startsWith('/Acu-aVibe/')) {
+        return path.replace('/Acu-aVibe/', '../');
+    }
+    
+    // Si es una ruta relativa local, la devolvemos tal cual
+    return path;
+}
+
 // Función para crear una tarjeta de lugar
 function createPlaceCard(place) {
     return `
         <div class="place-card">
-            <img src="${place.imagen}" alt="${place.nombre}" class="place-image" onclick="expandImage(this.src)">
+            <img src="${getImagePath(place.imagen)}" alt="${place.nombre}" class="place-image" onclick="expandImage(this.src)">
             <div class="place-info">
                 <h3>${place.nombre}</h3>
                 <p>${place.descripcion}</p>
@@ -77,7 +103,7 @@ function showDetails(placeId) {
             <div class="modal-layout">
                 <div class="modal-left">
                     <div class="modal-image-section">
-                        <img src="${place.imagen}" alt="${place.nombre}" onclick="expandImage('${place.imagen}')">
+                        <img src="${getImagePath(place.imagen)}" alt="${place.nombre}" onclick="expandImage('${getImagePath(place.imagen)}')">
                     </div>
                     <div class="modal-description">
                         ${place.descripcion}
@@ -128,8 +154,8 @@ function showDetails(placeId) {
                     <h3>Galería de Imágenes</h3>
                     <div class="gallery-grid">
                         ${place.galeria.map((img, index) => `
-                            <div class="gallery-item" onclick="expandImage('${img}')">
-                                <img src="${img}" alt="${place.nombre} - Imagen ${index + 1}">
+                            <div class="gallery-item" onclick="expandImage('${getImagePath(img)}')">
+                                <img src="${getImagePath(img)}" alt="${place.nombre} - Imagen ${index + 1}">
                                 <div class="gallery-overlay">
                                     <i class="fas fa-search-plus"></i>
                                 </div>
